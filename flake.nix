@@ -15,8 +15,9 @@
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             (pkgs.python3.withPackages (pp: [
+              pp.setuptools
+              pp.click
               pp.httpx
-              pp.aiofiles
               pp.tqdm
             ]))
           ];
