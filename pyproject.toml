@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kodik-downloader"
+description = "Kodik mass downloader with search"
+version = "0.1.1"
+requires-python = ">= 3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "yunfachi", email = "yunfachi@gmail.com" }]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: System Administrators",
+
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+
+    "Topic :: File Formats :: JSON",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Utilities"
+]
+keywords = [ "kodik", "video", "videoplayer", "downloader", "mass downloader" ]
+dependencies = [
+    "httpx",
+    "click",
+    "tqdm"
+]
+
+[project.urls]
+Source = "https://github.com/yunfachi/kodik-downloader"
+
+[project.scripts]
+kodik-downloader = "kodik_downloader.__main__"
+
+[tool.setuptools.packages.find]
+where = ["src"]
