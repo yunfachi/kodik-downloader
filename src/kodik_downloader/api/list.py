@@ -11,7 +11,7 @@ async def list(api_token, limit, errors_out, parameters={}):
     if "error" in r:
         log_error(f"List error: {r}", errors_out)
     
-    pbar = tqdm(total=min(limit, r.get("total", 0)), initial=len(r.get("results", [])), desc="Fetching", leave=False, unit="", unit_scale=1)
+    pbar = tqdm(total=min(r.get("total", 0), limit) if limit != None else r.get("total", 0), initial=len(r.get("results", [])), desc="Fetching", leave=False, unit="", unit_scale=1)
 
     results: list[dict] = r.get("results", [])
     while "next_page" in r and (limit == None or len(results) < limit):
